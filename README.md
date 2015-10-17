@@ -48,11 +48,13 @@ alt="Source Code Dependency Analysis" width="240" height="180" border="10" /></a
 -Permanent marking
 <p>The user can select software components and the highlighting (just click the border) is done in a permanent way and not faded away once the hover pointer gets moved away. A special feature of the permanent highlighting is that the connected components that are not activated permanently but that are connected to a highlighted component get faded partially. This way, the user can distinguish selected and connected elements, because the selected ones get shown not faded at all and the just connected ones get shown partially.</p>
 -Dependency intensity visualisation
-<p>The dependency intensity gets visualized in a graphical manner by showing different thick connections</p>p-Faded association highlighting  
-<p>Selected system components lead to a highlighting of the associated dependencies and the components they lead to</p>o-Hover tooltips
+<p>The dependency intensity gets visualized in a graphical manner by showing different thick connections</p>
+-Faded association highlighting  
+<p>Selected system components lead to a highlighting of the associated dependencies and the components they lead to</p>-Hover tooltips
 <p>Tooltips get shown once a dependency gets selected</p>e-Drill-Downs
-<p>Drill downs enable to get insights of selected component data and their inner dependencies at multiple levels</p>s-Url parameter diagram state
-<p>The state of the visualization is stored in URL parameters to enable forwarding an investigation to other people via a hyperlinks.</p>k		
+<p>Drill downs enable to get insights of selected component data and their inner dependencies at multiple levels</p>-Url parameter diagram state
+<p>The state of the visualization is stored in URL parameters to enable forwarding an investigation to other people via a hyperlinks.</p>
+		
 <h1>How to use your own CSV dependency files</h1>>
 You can use this index.html in the src folder for other CSVs as well. Just compute your own dependencies for the CSV or enter them manually. Then just load it by index.html?file=mydata.csv . 
 In case you want to enlist your file in our chord, just email it to <a
