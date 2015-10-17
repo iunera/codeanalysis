@@ -109,10 +109,7 @@ When we saw complex chord diagrams about the financial crisis <a href="http://bl
 <h1>Acknowledgement</h1>	
 <p >
 			This project was realized by the help of members of the following projects and would not have be possible without them: </p><p>
-		<a href="http://derkeiler.com" 
-		> <img
-			src="src/derkeiler.jpg" alt="DerKeiler Security Newsgroups" height="40px"></a>
-		 <a href="http://maps.stappz.com" style="margin-left: 100px;" 
+				 <a href="http://maps.stappz.com" style="margin-left: 100px;" 
 		><img
 			src="src/stappzlogo.png" alt="STAPPZ App" height="50px"></a>
 			
@@ -120,5 +117,10 @@ When we saw complex chord diagrams about the financial crisis <a href="http://bl
 			> <img
 			src="src/hypermodelling.jpg" alt="Hypermodelling Technology"
 			height="50px"> </a>
+		
+		<a href="http://derkeiler.com" 
+		> <img
+			src="src/derkeiler.jpg" alt="DerKeiler Security Newsgroups" height="40px"></a>
+
 		
 		</p>
