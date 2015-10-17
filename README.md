@@ -1,8 +1,8 @@
 #Source Code Dependency Analysis with Chord Diagrams / The Chord Code Coupling Detector (CCCD)
-<p>By T.Frey, C. Schmitt and U. Keil</p>
+<p>By  Tim Frey, Christian Schmitt and Ulrich Keil</p>
 This project is a proof of concept to demonstrate the advantages of a visual chord-diagram based investigation of software dependencies. The goal is to show that this graphical representation enables to detect and to analyze a program without having to know the implementation details on a detailed source code level. The application of the project can be used for business cases like quality gates or to plan refactorings to decouple or rearrange packages.  
 
-<a href="http://iunera.com/codedependencywithchord/index.html"
+<a href="http://www.iunera.com/codedependencywithchord/index.html"
 		> <img
 			src="src/codedependencywithchord.png" alt="Live Demo" height="200px"></a>
 
@@ -28,6 +28,9 @@ We compute the amount of method class of one Java package to another. We do this
 </p>
 <p>
 Find a demo usage video here:
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_RjKhw7qALhg
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_RjKhw7qALhg/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 <a href="https://youtu.be/RjKhw7qALhg">https://youtu.be/RjKhw7qALhg</a>
 </p>				
 			
@@ -35,7 +38,7 @@ Find a demo usage video here:
 The current solution visualizes dependencies source code with a chord diagram. Thereby, the diagram uses different features to enable a smooth navigation though the dependencies. In special, the main features are:
 
 - Permanent marking
-The user can select software components and the highlighting (just click the border) is done in a permanent way and not faded away once the hover pointer gets moved away. A special feature of the permanent highlighting is that the connected components that are not activated permanently but that are connected to a highlighted component get faded partially. This way, the user can distinguish selected and connected elements, because the selected ones get shown not faded at all and the just connected ones get shown partially.
+<p>The user can select software components and the highlighting (just click the border) is done in a permanent way and not faded away once the hover pointer gets moved away. A special feature of the permanent highlighting is that the connected components that are not activated permanently but that are connected to a highlighted component get faded partially. This way, the user can distinguish selected and connected elements, because the selected ones get shown not faded at all and the just connected ones get shown partially.</p>
 - The dependency intensity gets visualized in a graphical manner by showing different thick connections
 - Selected system components lead to a highlighting of the associated dependencies and the components they lead to
 - Tooltips get shown once a dependency gets selected
@@ -43,7 +46,7 @@ The user can select software components and the highlighting (just click the bor
 - Drill downs enable to get insights of selected component data and their inner dependencies at multiple levels
 - The state of the visualization is stored in URL parameters to enable forwarding an investigation to other people via a hyperlink
 			
-#Howto use your own CSV depdendency files
+#Howto use your own CSV dependency files
 You can use this index.html in the src folder for other CSVs as well. Just compute your own dependencies for the CSV or enter them manually. Then just load it by index.html?file=mydata.csv . 
 In case you want to enlist your file in our chord, just email it to <a
 				href="mailto:chordcodeanalytics@iunera.com?subject=Feedback%20for%20Code%20Dependency%20Analysis%20with%20Chord%20Diagrams&amp;body=Hi%0D%0Atell%20us%20about%20%20your%20impression%20and/or%20rate%20the%20chord%20analysis%20solution%20in%20respect%20to%20analyze%20a%20large%20program%0D%0A(scale:1-6/1=bad/6=good).">chordcodeanalytics(at)iunera.com</a> or send a push request with the CSV data. We'll then enlist it in the script that user can choose different projects.
@@ -58,33 +61,33 @@ The headers of the csv have to contain the following lables "creditor,debtor,amo
 - "Risk" is the value of another strength dimension of a dependency that gets used for coloring if available ( In the example the amount is the number of method calls and risk the number of distinct called java types(classes, interfaces, Enums)).
 
 Drilldown files:
-When you add a "mydata_drilldown" file it has to be named as the parent file (mydata.csv) with "_drilldown" appended in the filename. E.g.:"jdt.csv->jdt_drilldown.csv".
-The labels in a drill-down file (jdt_drilldown.csv) have to be named "topcreditor, topdebtor, creditor, debtor, amount, risk", whereby the topcreditor and topdebtor have to correspond to the "creditor" and "debtor" in the parent file (jdt.csv). The "topcreditor and topdebtor" are needed for the relation to the parent compontents.
-Creditor and debtor and in the drilldown file represent the children objects of the parents. You can add another depth dimension with a "drilldown_drilldown.csv" file naming (e.g. jdt.drilldown_drilldown.csv) then the topcreditor and topdebtor correspond to the debtor and creditor of the superior level "_drilldown" file (jdt_drilldown.csv).
-E.g. jdt.csv creditor and debtor get topcreditor and topdebtor in jdt_drilldown.csv. The creditors and debtors in the jdt_drilldown.csv get themselves then the topcreditors and topdebtors in jdt_drilldown_drilldown.csv.
+<p>When you add a "mydata_drilldown" file it has to be named as the parent file (mydata.csv) with "_drilldown" appended in the filename. E.g.:"jdt.csv->jdt_drilldown.csv".
+The labels in a drill-down file (jdt_drilldown.csv) have to be named "topcreditor, topdebtor, creditor, debtor, amount, risk", whereby the topcreditor and topdebtor have to correspond to the "creditor" and "debtor" in the parent file (jdt.csv). The "topcreditor and topdebtor" are needed for the relation to the parent compontents.</p><p>
+Creditor and debtor and in the drilldown file represent the children objects of the parents. You can add another depth dimension with a "drilldown_drilldown.csv" file naming (e.g. jdt.drilldown_drilldown.csv) then the topcreditor and topdebtor correspond to the debtor and creditor of the superior level "_drilldown" file (jdt_drilldown.csv).</p><p>
+E.g. jdt.csv creditor and debtor get topcreditor and topdebtor in jdt_drilldown.csv. The creditors and debtors in the jdt_drilldown.csv get themselves then the topcreditors and topdebtors in jdt_drilldown_drilldown.csv.</p>
 
 		
 #Background
-A software architecture goal to create reliable and reusable software artifacts is to develop loosely coupled software components. Furthermore, strong source code dependencies inflict source reuse and engineering problems.
-However, even that it is well-known that restricting dependencies is a good thing, software engineers often cannot avoid them when manufacturing systems in the first place. Commonly, a software system is developed by iterative steps and the dependencies grow in the continuous development process. This results in the process that the dependencies have to be maintained over time and refactoring steps have to be taken to manage and reduce dependencies over time. Once the development of code foundation of a software system grows, the management of dependencies gets more and more complex.
-In order to reduce dependencies, developers need to know which artifacts consume other artifacts. Today, mostly this work is done by inspecting the source code manually. Usually the developers tediously gather the artifacts that belong to the desired dependencies and then try to reduce them. Additionally, software and their dependencies are multi-dimensional construct and manifold what makes the inspection even more difficult.
-When we saw complex chord diagrams about the financial crisis <a href="http://bl.ocks.org/mbostock/1308257">(check it here)</a> we got motivated us to use chord diagrams to investigate software dependencies in a visual manner.
+<p>A software architecture goal to create reliable and reusable software artifacts is to develop loosely coupled software components. Furthermore, strong source code dependencies inflict source reuse and engineering problems.</p><p>
+However, even that it is well-known that restricting dependencies is a good thing, software engineers often cannot avoid them when manufacturing systems in the first place. Commonly, a software system is developed by iterative steps and the dependencies grow in the continuous development process. This results in the process that the dependencies have to be maintained over time and refactoring steps have to be taken to manage and reduce dependencies over time. Once the development of code foundation of a software system grows, the management of dependencies gets more and more complex.</p><p>
+In order to reduce dependencies, developers need to know which artifacts consume other artifacts. Today, mostly this work is done by inspecting the source code manually. Usually the developers tediously gather the artifacts that belong to the desired dependencies and then try to reduce them. </p><p>Additionally, software and their dependencies are multi-dimensional construct and manifold what makes the inspection even more difficult.
+When we saw complex chord diagrams about the financial crisis <a href="http://bl.ocks.org/mbostock/1308257">(check it here)</a> we got motivated us to use chord diagrams to investigate software dependencies in a visual manner.</p>
 
 #Similar Projects
 If you want to have a similar project that you know have enlisted here. Please drop us an email with the project and describe the relation/key similarities or differences.  <a
 				href="mailto:chordcodeanalytics@iunera.com?subject=Feedback%20for%20Code%20Dependency%20Analysis%20with%20Chord%20Diagrams&amp;body=Hi%0D%0Atell%20us%20about%20%20your%20impression%20and/or%20rate%20the%20chord%20analysis%20solution%20in%20respect%20to%20analyze%20a%20large%20program%0D%0A(scale:1-6/1=bad/6=good).">chordcodeanalytics(at)iunera.com</a>
 
 
-<p>*DependencyWheel*
-A Similar project that we found is <a href="http://www.redotheweb.com/DependencyWheel/">DependencyWheel: An Interactive Visualization Of Package Dependencies by François Zaninotto</a>. It is a really great tool to visualize PHP dependencies. Main differences that we recognized are: Connection intensity does not get visualized in the connection strength; No permanent marking of components to activate the cyclic depdenecies step by step; No drilldowns; No tooltips</p>
+*DependencyWheel*
+<p>A Similar project that we found is <a href="http://www.redotheweb.com/DependencyWheel/">DependencyWheel: An Interactive Visualization Of Package Dependencies by François Zaninotto</a>. It is a really great tool to visualize PHP dependencies. Main differences that we recognized are: Connection intensity does not get visualized in the connection strength; No permanent marking of components to activate the cyclic depdenecies step by step; No drilldowns; No tooltips</p>
 
-<p>*A Visual Analysis Approach to Support Perfective Software Maintenance*
-Another project that we got told about is <a href="http://www.youtube.com/watch?v=4rkgfRaCS20">A Visual Analysis Approach to Support Perfective Software Maintenance by Jonas Trümper and Martin Beck and Jürgen Döllner in Proceedings of the 16th International Conference on Information Visualisation, IEEE</a>. Main differences that we recognized :  Not running in the browser/ no url params Differences and related visualizations that we found so far; Connection intensity does not get visualized in the connection strength; Step by step dependency investigations by clicking components and fading is not possible in the way we do it; Drill downs or filtering the current selection seems not possible  </p>
+*A Visual Analysis Approach to Support Perfective Software Maintenance*
+<p>Another project that we got told about is <a href="http://www.youtube.com/watch?v=4rkgfRaCS20">A Visual Analysis Approach to Support Perfective Software Maintenance by Jonas Trümper and Martin Beck and Jürgen Döllner in Proceedings of the 16th International Conference on Information Visualisation, IEEE</a>. Main differences that we recognized :  Not running in the browser/ no url params Differences and related visualizations that we found so far; Connection intensity does not get visualized in the connection strength; Step by step dependency investigations by clicking components and fading is not possible in the way we do it; Drill downs or filtering the current selection seems not possible  </p>
 
 
-<p>*Hypermodelling* 
-The <a href="http://hypermodelling.com">Hypermodelling</p>  technique is a generic approach to analyze source code with Data Warehouses <a href="http://accepted.hypermodelling.com/frey_magdeburg_dissertation_hypermodelling_2013.pdf"
-		>(find the free ebook here)</p>. The relation to the chord visualisation is that Hypermodelling was used to compute the CSVs that served as data source for the visualisation. We remark that those CSVs can also be computed by other techniques. In this context it is also noteworthy that we also computed CSVs for class inheritance and other means of couplings as first test and the chord diagrams seem to work well for those, too. However, they are harder to interpret what set our focus to method calls.   
+*Hypermodelling* 
+<p>The <a href="http://hypermodelling.com">Hypermodelling</a>  technique is a generic approach to analyze source code with Data Warehouses <a href="http://accepted.hypermodelling.com/frey_magdeburg_dissertation_hypermodelling_2013.pdf"
+		>(find the free ebook here)</p>.<p> The relation to the chord visualisation is that Hypermodelling was used to compute the CSVs that served as data source for the visualisation. We remark that those CSVs can also be computed by other techniques. In this context it is also noteworthy that we also computed CSVs for class inheritance and other means of couplings as first test and the chord diagrams seem to work well for those, too. However, they are harder to interpret what set our focus to method calls.   
 </p>
 		
 
