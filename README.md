@@ -45,17 +45,15 @@ alt="Source Code Dependency Analysis" width="240" height="180" border="10" /></a
 			
 <h1>Features</h1>
 <p>The current solution visualizes dependencies source code with a chord diagram. Thereby, the diagram uses different features to enable a smooth navigation though the dependencies. In special, the main features are:</p>
-- Permanent marking
+-Permanent marking
 <p>The user can select software components and the highlighting (just click the border) is done in a permanent way and not faded away once the hover pointer gets moved away. A special feature of the permanent highlighting is that the connected components that are not activated permanently but that are connected to a highlighted component get faded partially. This way, the user can distinguish selected and connected elements, because the selected ones get shown not faded at all and the just connected ones get shown partially.</p>
-- The dependency intensity gets visualized in a graphical manner by showing different thick connections
-- Selected system components lead to a highlighting of the associated dependencies and the components they lead to
-- Tooltips get shown once a dependency gets selected
-- The current state of the visualization can be click-activated to a permanent mode, where the not shown dependencies get faded away and no tooltips for those appear anymore
-- Drill downs enable to get insights of selected component data and their inner dependencies at multiple levels
-- The state of the visualization is stored in URL parameters to enable forwarding an investigation to other people via a hyperlink
-</p>
-			
-<h1>How to use your own CSV dependency files</h1>
+-Dependency intensity visualisation
+<p>The dependency intensity gets visualized in a graphical manner by showing different thick connections</p>p-Faded association highlighting  
+<p>Selected system components lead to a highlighting of the associated dependencies and the components they lead to</p>o-Hover tooltips
+<p>Tooltips get shown once a dependency gets selected</p>e-Drill-Downs
+<p>Drill downs enable to get insights of selected component data and their inner dependencies at multiple levels</p>s-Url parameter diagram state
+<p>The state of the visualization is stored in URL parameters to enable forwarding an investigation to other people via a hyperlinks.</p>k		
+<h1>How to use your own CSV dependency files</h1>>
 You can use this index.html in the src folder for other CSVs as well. Just compute your own dependencies for the CSV or enter them manually. Then just load it by index.html?file=mydata.csv . 
 In case you want to enlist your file in our chord, just email it to <a
 				href="mailto:chordcodeanalytics@iunera.com?subject=Feedback%20for%20Code%20Dependency%20Analysis%20with%20Chord%20Diagrams&amp;body=Hi%0D%0Atell%20us%20about%20%20your%20impression%20and/or%20rate%20the%20chord%20analysis%20solution%20in%20respect%20to%20analyze%20a%20large%20program%0D%0A(scale:1-6/1=bad/6=good).">chordcodeanalytics(at)iunera.com</a> or send a push request with the CSV data. We'll then enlist it in the script that user can choose different projects.
