@@ -11,7 +11,7 @@ This project is a proof of concept to demonstrate the advantages of a visual cho
 - Approach
 - Demo 
 - Feature Description
-- How to use your own projects / Own csv files
+- How to use your own projects / Other CSV file loading
 - Acknowledgement 
 - Related Work/Similar projects
 
@@ -45,18 +45,18 @@ alt="Source Code Dependency Analysis" width="240" height="180" border="10" /></a
 			
 <h1>Features</h1>
 <p>The current solution visualizes dependencies source code with a chord diagram. Thereby, the diagram uses different features to enable a smooth navigation though the dependencies. In special, the main features are:</p>
--Permanent marking-
+*Permanent marking*
 <p>The user can select software components and the highlighting (just click the border) is done in a permanent way and not faded away once the hover pointer gets moved away. A special feature of the permanent highlighting is that the connected components that are not activated permanently but that are connected to a highlighted component get faded partially. This way, the user can distinguish selected and connected elements, because the selected ones get shown not faded at all and the just connected ones get shown partially.</p>
--Dependency intensity visualisation-
+*Dependency intensity visualisation*
 <p>The dependency intensity gets visualized in a graphical manner by showing different thick connections</p>
--Faded association highlighting  
+*Faded association highlighting*  
 <p>Selected system components lead to a highlighting of the associated dependencies and the components they lead to</p>
--Hover tooltips-
-<p>Tooltips get shown once a dependency gets selected</p>
--Drill-Downs-
+*Hover tooltips*
+<p>Tooltips get shown once a dependency gets selected, showing details about the intensity</p>
+*Drill-Downs*
 <p>Drill downs enable to get insights of selected component data and their inner dependencies at multiple levels</p>
--Url parameter diagram state-
-<p>The state of the visualization is stored in URL parameters to enable forwarding an investigation to other people via a hyperlinks.</p>
+*Url parameter diagram state*
+<p>The state of the visualization is stored in URL parameters to enable forwarding an investigation result to other people via a hyperlinks.</p>
 		
 <h1>How to use your own CSV dependency files</h1>
 You can use this index.html in the src folder for other CSVs as well. Just compute your own dependencies for the CSV or enter them manually. Then just load it by index.html?file=mydata.csv . 
@@ -73,7 +73,7 @@ The headers of the csv have to contain the following lables "creditor,debtor,amo
 - "Amount" is the intensity of the dependency (how often is it called).
 - "Risk" is the value of another strength dimension of a dependency that gets used for coloring if available ( In the example the amount is the number of method calls and risk the number of distinct called java types(classes, interfaces, Enums)).</p>
 
-*Drilldown files:*
+*Drilldown files: *
 <p>When you add a "mydata_drilldown" file it has to be named as the parent file (mydata.csv) with "_drilldown" appended in the filename. E.g.:"jdt.csv->jdt_drilldown.csv".</p><p>
 The labels in a drill-down file (jdt_drilldown.csv) have to be named "topcreditor, topdebtor, creditor, debtor, amount, risk", whereby the topcreditor and topdebtor have to correspond to the "creditor" and "debtor" in the parent file (jdt.csv). The "topcreditor and topdebtor" are needed for the relation to the parent compontents.</p><p>
 Creditor and debtor and in the drilldown file represent the children objects of the parents. You can add another depth dimension with a "drilldown_drilldown.csv" file naming (e.g. jdt.drilldown_drilldown.csv) then the topcreditor and topdebtor correspond to the debtor and creditor of the superior level "_drilldown" file (jdt_drilldown.csv).</p><p>
