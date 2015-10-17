@@ -6,8 +6,15 @@ This project is a proof of concept to demonstrate the advantages of a visual cho
 		> <img
 			src="src/codedependencywithchord.png" alt="Live Demo" height="200px"></a>
 
+<h3>Contents<h3>
+- Motivation
+- Approach
+- Demo 
+- How to use your own projects / Own csv files
+- Acknowledgement 
+- Related Work/Similar projects
 
-#Motivation
+<h1>Motivation</h1>
 <a href="src/sizeofcode-hypermodelling-com-frey-dissertation.jpg"
 		> <img
 			src="src/sizeofcode-hypermodelling-com-frey-dissertation.jpg" alt="Source: T. Frey, Hypermodelling: Next Level Software Engineering with Data Warehouses, Dissertation, Otto-von-Guericke-Universität Magdeburg" ></a>
@@ -19,11 +26,11 @@ Computer programs run on plenty of devices. Their source code is growing into se
 
 
 
-#The Approach	
+<h1>Approach</h1>	
 We compute the amount of method class of one Java package to another. We do this for the package hierarchy of a Java program. This means we compute it for org.eclipse, org.eclipse.jdt, org.eclipse.jdt.core and so on and so forth. We arrange the amount which package calls which package in several a comma separated value (csv) files. Then we use these csv files to feed a Javascript chord diagram with the data. The chord diagrams gets some additional controls to let the user navigate and explore the dependencies based on method calls then. 
 <p></p>
 
-#Demo
+<h1>Demo</h1>
 <p>Live demo:
 <a href="http://iunera.com/codedependencywithchord/index.html">http://iunera.com/codedependencywithchord/index.html</a>
 </p>
@@ -35,7 +42,7 @@ Find a demo usage video here:
 " target="_blank"><img src="http://img.youtube.com/vi/RjKhw7qALhg/0.jpg" 
 alt="Source Code Dependency Analysis" width="240" height="180" border="10" /></a></p>				
 			
-#Features
+<h1>Features</h1>
 <p>The current solution visualizes dependencies source code with a chord diagram. Thereby, the diagram uses different features to enable a smooth navigation though the dependencies. In special, the main features are:</p>
 <p>
 - Permanent marking
@@ -48,7 +55,7 @@ alt="Source Code Dependency Analysis" width="240" height="180" border="10" /></a
 - The state of the visualization is stored in URL parameters to enable forwarding an investigation to other people via a hyperlink
 </p>
 			
-#How to use your own CSV dependency files
+<h1>How to use your own CSV dependency files</h1>
 You can use this index.html in the src folder for other CSVs as well. Just compute your own dependencies for the CSV or enter them manually. Then just load it by index.html?file=mydata.csv . 
 In case you want to enlist your file in our chord, just email it to <a
 				href="mailto:chordcodeanalytics@iunera.com?subject=Feedback%20for%20Code%20Dependency%20Analysis%20with%20Chord%20Diagrams&amp;body=Hi%0D%0Atell%20us%20about%20%20your%20impression%20and/or%20rate%20the%20chord%20analysis%20solution%20in%20respect%20to%20analyze%20a%20large%20program%0D%0A(scale:1-6/1=bad/6=good).">chordcodeanalytics(at)iunera.com</a> or send a push request with the CSV data. We'll then enlist it in the script that user can choose different projects.
@@ -70,13 +77,13 @@ Creditor and debtor and in the drilldown file represent the children objects of 
 E.g. jdt.csv creditor and debtor get topcreditor and topdebtor in jdt_drilldown.csv. The creditors and debtors in the jdt_drilldown.csv get themselves then the topcreditors and topdebtors in jdt_drilldown_drilldown.csv.</p>
 
 		
-#Background
+<h1>Background</h1>
 <p> A software architecture goal to create reliable and reusable software artifacts is to develop loosely coupled software components. Furthermore, strong source code dependencies inflict source reuse and engineering problems.</p><p>
 However, even that it is well-known that restricting dependencies is a good thing, software engineers often cannot avoid them when manufacturing systems in the first place. Commonly, a software system is developed by iterative steps and the dependencies grow in the continuous development process. This results in the process that the dependencies have to be maintained over time and refactoring steps have to be taken to manage and reduce dependencies over time. Once the development of code foundation of a software system grows, the management of dependencies gets more and more complex.</p><p>
 In order to reduce dependencies, developers need to know which artifacts consume other artifacts. Today, mostly this work is done by inspecting the source code manually. Usually the developers tediously gather the artifacts that belong to the desired dependencies and then try to reduce them. </p><p>Additionally, software and their dependencies are multi-dimensional construct and manifold what makes the inspection even more difficult.
 When we saw complex chord diagrams about the financial crisis <a href="http://bl.ocks.org/mbostock/1308257">(check it here)</a> we got motivated us to use chord diagrams to investigate software dependencies in a visual manner.</p>
 
-#Similar Projects
+<h1>Similar Projects</h1>
 <p>If you want to have a similar project that you know have enlisted here. Please drop us an email with the project and describe the relation/key similarities or differences.  <a
 				href="mailto:chordcodeanalytics@iunera.com?subject=Feedback%20for%20Code%20Dependency%20Analysis%20with%20Chord%20Diagrams&amp;body=Hi%0D%0Atell%20us%20about%20%20your%20impression%20and/or%20rate%20the%20chord%20analysis%20solution%20in%20respect%20to%20analyze%20a%20large%20program%0D%0A(scale:1-6/1=bad/6=good).">chordcodeanalytics(at)iunera.com</a></p>
 
@@ -95,15 +102,18 @@ When we saw complex chord diagrams about the financial crisis <a href="http://bl
 		
 
 
-#Acknowledgement	
+<h1>Acknowledgement</h1>	
 <p >
 			This project was realized by the help of members of the following projects and would not have be possible without them: </p><p>
-		<a href="http://derkeiler.com"
+		<a href="http://derkeiler.com" 
 		> <img
-			src="src/derkeiler.jpg" alt="DerKeiler Security Newsgroups" height="50px"></a>
-		<a href="http://hypermodelling.com/index.php/research/publications"
+			src="src/derkeiler.jpg" alt="DerKeiler Security Newsgroups" height="40px"></a>
+		
+		 <a href="http://maps.stappz.com" style="margin-left: 100px;" 
+		><img
+			src="src/stappzlogo.png" alt="STAPPZ App" height="50px"></a>
+			
+			<a href="http://hypermodelling.com/index.php/research/publications" 	style="margin-left: 100px;" 
 			><img
 			src="src/hypermodelling.jpg" alt="Hypermodelling Technology"
-			height="50px"></a> <a href="http://maps.stappz.com"
-		><img
-			src="src/stappzlogo.png" alt="STAPPZ App" height="50px"></a></p>
+			height="50px"></a></p>
