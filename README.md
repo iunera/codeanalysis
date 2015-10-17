@@ -120,7 +120,7 @@ When we saw complex chord diagrams about the financial crisis <a href="http://bl
 		
 		<a href="http://derkeiler.com" 
 		> <img
-			src="src/derkeiler.jpg" alt="DerKeiler Security Newsgroups" height="40px"></a>
+			src="src/derkeiler.jpg" alt="DerKeiler Security Newsgroups" height="30px"></a>
 
 		
 		</p>
