@@ -1,4 +1,5 @@
-#Source Code Dependency Analysis with Chord Diagrams / The Chord Code Coupling Detector (CCCD)
+<h1>Source Code Dependency Analysis with Chord Diagrams</h1>
+<h3>The Chord Code Coupling Detector (CCCD) / Wheel of Fortune</h3>
 <p>By  Tim Frey, Christian Schmitt and Ulrich Keil</p>
 This project is a proof of concept to demonstrate the advantages of a visual chord-diagram based investigation of software dependencies. The goal is to show that this graphical representation enables to detect and to analyze a program without having to know the implementation details on a detailed source code level. The application of the project can be used for business cases like quality gates or to plan refactorings to decouple or rearrange packages.  
 
@@ -48,7 +49,7 @@ alt="Source Code Dependency Analysis" width="240" height="180" border="10" /></a
 <p>The user can select software components and the highlighting (just click the border) is done in a permanent way and not faded away once the hover pointer gets moved away. A special feature of the permanent highlighting is that the connected components that are not activated permanently but that are connected to a highlighted component get faded partially. This way, the user can distinguish selected and connected elements, because the selected ones get shown not faded at all and the just connected ones get shown partially.</p>
 <b>Dependency intensity visualisation</b>
 <p>The dependency intensity gets visualized in a graphical manner by showing different thick connections</p>
-Faded association highlighting
+<b>Faded association highlighting</b>
 <p>Selected system components lead to a highlighting of the associated dependencies and the components they lead to</p>
 <b>Hover tooltips</b>
 <p>Tooltips get shown once a dependency gets selected, showing details about the intensity</p>
@@ -61,11 +62,12 @@ Faded association highlighting
 <p>You can use this index.html in the src folder for other CSVs as well. Just compute your own dependencies for the CSV or enter them manually. Then just load it by index.html?file=mydata.csv . 
 </p><p>In case you want to enlist your project then in our chord, just email the url and so on to <a
 				href="mailto:chordcodeanalytics@iunera.com?subject=Feedback%20for%20Code%20Dependency%20Analysis%20with%20Chord%20Diagrams&amp;body=Hi%0D%0Atell%20us%20about%20%20your%20impression%20and/or%20rate%20the%20chord%20analysis%20solution%20in%20respect%20to%20analyze%20a%20large%20program%0D%0A(scale:1-6/1=bad/6=good).">chordcodeanalytics(at)iunera.com</a> or send a push request with the CSV data if you want to include data. </p>
-
-<b>Remark:</b> If you copy start the script locally with a browser without a webserver (e.g. file:/// and not http://) it is likely the case that you have to turn off the same origin policy of the browser. The other way to get around the same origin pilicy is to let it run on a webserver and upload the csv there. 
- 
-<b>Description of the csv data - example in ./src/jdt.csv</b>
 <p>
+<b>Remark:</b> If you copy start the script locally with a browser without a webserver (e.g. file:/// and not http://) it is likely the case that you have to turn off the same origin policy of the browser. The other way to get around the same origin pilicy is to let it run on a webserver and upload the csv there. 
+ </p>
+ <p>
+<b>Description of the csv data - example in ./src/jdt.csv</b> <br>
+
 The headers of the csv have to contain the following labels "creditor,debtor,amount,risk". <p>
 "Creditor" is the outgoing dependency root (caller). <br>
 "Debtor" is where the dependency is heading to (callee). <br>
@@ -79,7 +81,7 @@ Creditor and debtor and in the drilldown file represent the children objects of 
 E.g. jdt.csv creditor and debtor get topcreditor and topdebtor in jdt_drilldown.csv. The creditors and debtors in the jdt_drilldown.csv get themselves then the topcreditors and topdebtors in jdt_drilldown_drilldown.csv.</p>
 
 		
-<h1>Background</h1>
+<h1>Background - Idea origin</h1>
 <p> A software architecture goal to create reliable and reusable software artifacts is to develop loosely coupled software components. Furthermore, strong source code dependencies inflict source reuse and engineering problems.</p><p>
 However, even that it is well-known that restricting dependencies is a good thing, software engineers often cannot avoid them when manufacturing systems in the first place. Commonly, a software system is developed by iterative steps and the dependencies grow in the continuous development process. This results in the process that the dependencies have to be maintained over time and refactoring steps have to be taken to manage and reduce dependencies over time. Once the development of code foundation of a software system grows, the management of dependencies gets more and more complex.</p><p>
 In order to reduce dependencies, developers need to know which artifacts consume other artifacts. Today, mostly this work is done by inspecting the source code manually. Usually the developers tediously gather the artifacts that belong to the desired dependencies and then try to reduce them. </p><p>Additionally, software and their dependencies are multi-dimensional construct and manifold what makes the inspection even more difficult.
@@ -90,14 +92,14 @@ When we saw complex chord diagrams about the financial crisis <a href="http://bl
 				href="mailto:chordcodeanalytics@iunera.com?subject=Feedback%20for%20Code%20Dependency%20Analysis%20with%20Chord%20Diagrams&amp;body=Hi%0D%0Atell%20us%20about%20%20your%20impression%20and/or%20rate%20the%20chord%20analysis%20solution%20in%20respect%20to%20analyze%20a%20large%20program%0D%0A(scale:1-6/1=bad/6=good).">chordcodeanalytics(at)iunera.com</a></p>
 
 
-*DependencyWheel*
+<b>DependencyWheel</b>
 <p>A Similar project that we found is <a href="http://www.redotheweb.com/DependencyWheel/">DependencyWheel: An Interactive Visualization Of Package Dependencies by François Zaninotto</a>. It is a really great tool to visualize PHP dependencies. Main differences that we recognized are: Connection intensity does not get visualized in the connection strength; No permanent marking of components to activate the cyclic dependencies step by step; No drilldowns; No tooltips</p>
 
-*A Visual Analysis Approach to Support Perfective Software Maintenance*
+<b>A Visual Analysis Approach to Support Perfective Software Maintenance</b>
 <p>Another similar project is: <a href="http://www.youtube.com/watch?v=4rkgfRaCS20">A Visual Analysis Approach to Support Perfective Software Maintenance by Jonas Trümper and Martin Beck and Jürgen Döllner in Proceedings of the 16th International Conference on Information Visualisation, IEEE</a>. The main differences that we recognized are:  Not running in the browser/ no url params Differences and related visualizations that we found so far; Connection intensity does not get visualized in the connection strength; Step by step dependency investigations by clicking components and fading is not possible in the way we do it; Drill downs or filtering the current selection seems not possible  </p>
 
 
-*Hypermodelling* 
+<b>Hypermodelling</b> 
 <p>The <a href="http://hypermodelling.com">Hypermodelling</a>  technique is a generic approach to analyze source code with Data Warehouses <a href="http://accepted.hypermodelling.com/frey_magdeburg_dissertation_hypermodelling_2013.pdf"
 		>(find the free ebook here)</a>. The relation to the chord visualisation is that Hypermodelling was used to compute the CSVs that served as data source for the visualisation. We remark that those CSVs can also be computed by other techniques. In this context it is also noteworthy that we also computed CSVs for class inheritance and other means of couplings as first test and the chord diagrams seem to work well for those, too. However, they are harder to interpret what set our focus to method calls.   
 </p>
