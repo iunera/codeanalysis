@@ -112,12 +112,13 @@ When we saw complex chord diagrams about the financial crisis <a href="http://bl
 		<a href="http://derkeiler.com" 
 		> <img
 			src="src/derkeiler.jpg" alt="DerKeiler Security Newsgroups" height="40px"></a>
-		
 		 <a href="http://maps.stappz.com" style="margin-left: 100px;" 
 		><img
 			src="src/stappzlogo.png" alt="STAPPZ App" height="50px"></a>
 			
-			<a href="http://hypermodelling.com/index.php/research/publications" 	style="margin-left: 100px;" 
-			><img
+		<a href="http://hypermodelling.com/index.php/research/publications" 	style="margin-left: 100px;" 
+			> <img
 			src="src/hypermodelling.jpg" alt="Hypermodelling Technology"
-			height="50px"></a></p>
+			height="50px"> </a>
+		
+		</p>
