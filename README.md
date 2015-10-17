@@ -25,12 +25,12 @@ Computer programs run on plenty of devices. Their source code is growing into se
 		>demo diagram</a> were created by computing coupling indicators of the <a href="http://http://www.eclipse.org/jdt/">Eclipse Java development tools (JDT)</a> with the <a href="http://hypermodelling.com">Hypermodelling</a> technology. Thereby, the coupling indicators are loaded from CSV data files into the diagram (see the csv files in the source folder as example to generate your own). The CSV approach enables to use other CSV data with the Javascript frontend.
 </p>
 
-
+***sdsd**
 
 <h1>Approach</h1>	
-We compute the amount of method class of one Java package to another. We do this for the package hierarchy of a Java program. This means we compute it for org.eclipse, org.eclipse.jdt, org.eclipse.jdt.core and so on and so forth. We arrange the amount which package calls which package in several a comma separated value (csv) files. Then we use these csv files to feed a Javascript chord diagram with the data. The chord diagrams gets some additional controls to let the user navigate and explore the dependencies based on method calls then. 
-<p></p>
-
+<p>We compute the amount of method class of one Java package to another. We do this for the package hierarchy of a Java program. This means we compute it for org.eclipse, org.eclipse.jdt, org.eclipse.jdt.core and so on and so forth. We arrange the amount which package calls which package in several a comma separated value (csv) files. Then we use these csv files to feed a Javascript chord diagram with the data. The chord diagrams gets some additional controls to let the user navigate and explore the dependencies based on method calls then. 
+</p>
+***sdsd**
 <h1>Demo</h1>
 <p>Live demo:
 <a href="http://iunera.com/codedependencywithchord/index.html">http://iunera.com/codedependencywithchord/index.html</a>
@@ -44,6 +44,7 @@ Find a demo usage video here:
 alt="Source Code Dependency Analysis" width="240" height="180" border="10" /></a></p>				
 			
 <h1>Features</h1>
+
 <p>The current solution visualizes dependencies source code with a chord diagram. Thereby, the diagram uses different features to enable a smooth navigation though the dependencies. In special, the main features are:</p>
 **Permanent marking**
 <p>The user can select software components and the highlighting (just click the border) is done in a permanent way and not faded away once the hover pointer gets moved away. A special feature of the permanent highlighting is that the connected components that are not activated permanently but that are connected to a highlighted component get faded partially. This way, the user can distinguish selected and connected elements, because the selected ones get shown not faded at all and the just connected ones get shown partially.</p>
