@@ -6,10 +6,11 @@ This project is a proof of concept to demonstrate the advantages of a visual cho
 		> <img
 			src="src/codedependencywithchord.png" alt="Live Demo" height="200px"></a>
 
-<h3>Contents<h3>
+**Contents**
 - Motivation
 - Approach
 - Demo 
+- Feature Description
 - How to use your own projects / Own csv files
 - Acknowledgement 
 - Related Work/Similar projects
@@ -44,7 +45,6 @@ alt="Source Code Dependency Analysis" width="240" height="180" border="10" /></a
 			
 <h1>Features</h1>
 <p>The current solution visualizes dependencies source code with a chord diagram. Thereby, the diagram uses different features to enable a smooth navigation though the dependencies. In special, the main features are:</p>
-<p>
 - Permanent marking
 <p>The user can select software components and the highlighting (just click the border) is done in a permanent way and not faded away once the hover pointer gets moved away. A special feature of the permanent highlighting is that the connected components that are not activated permanently but that are connected to a highlighted component get faded partially. This way, the user can distinguish selected and connected elements, because the selected ones get shown not faded at all and the just connected ones get shown partially.</p>
 - The dependency intensity gets visualized in a graphical manner by showing different thick connections
@@ -97,7 +97,7 @@ When we saw complex chord diagrams about the financial crisis <a href="http://bl
 
 *Hypermodelling* 
 <p>The <a href="http://hypermodelling.com">Hypermodelling</a>  technique is a generic approach to analyze source code with Data Warehouses <a href="http://accepted.hypermodelling.com/frey_magdeburg_dissertation_hypermodelling_2013.pdf"
-		>(find the free ebook here)</p>.<p> The relation to the chord visualisation is that Hypermodelling was used to compute the CSVs that served as data source for the visualisation. We remark that those CSVs can also be computed by other techniques. In this context it is also noteworthy that we also computed CSVs for class inheritance and other means of couplings as first test and the chord diagrams seem to work well for those, too. However, they are harder to interpret what set our focus to method calls.   
+		>(find the free ebook here)</a>. The relation to the chord visualisation is that Hypermodelling was used to compute the CSVs that served as data source for the visualisation. We remark that those CSVs can also be computed by other techniques. In this context it is also noteworthy that we also computed CSVs for class inheritance and other means of couplings as first test and the chord diagrams seem to work well for those, too. However, they are harder to interpret what set our focus to method calls.   
 </p>
 		
 
