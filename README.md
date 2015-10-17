@@ -10,7 +10,7 @@ This project is a proof of concept to demonstrate the advantages of a visual cho
 **Contents**
 - Motivation
 - Approach
-- Demo 
+- Demo (Video <a href="https://youtu.be/RjKhw7qALhg">https://youtu.be/RjKhw7qALhg</a> )
 - Feature Description
 - How to use your own projects / Other CSV file loading
 - Acknowledgement 
