@@ -36,8 +36,8 @@ Find a demo usage video here:
 alt="Source Code Dependency Analysis" width="240" height="180" border="10" /></a></p>				
 			
 #Features
-The current solution visualizes dependencies source code with a chord diagram. Thereby, the diagram uses different features to enable a smooth navigation though the dependencies. In special, the main features are:
-
+<p>The current solution visualizes dependencies source code with a chord diagram. Thereby, the diagram uses different features to enable a smooth navigation though the dependencies. In special, the main features are:</p>
+<p>
 - Permanent marking
 <p>The user can select software components and the highlighting (just click the border) is done in a permanent way and not faded away once the hover pointer gets moved away. A special feature of the permanent highlighting is that the connected components that are not activated permanently but that are connected to a highlighted component get faded partially. This way, the user can distinguish selected and connected elements, because the selected ones get shown not faded at all and the just connected ones get shown partially.</p>
 - The dependency intensity gets visualized in a graphical manner by showing different thick connections
@@ -46,6 +46,7 @@ The current solution visualizes dependencies source code with a chord diagram. T
 - The current state of the visualization can be click-activated to a permanent mode, where the not shown dependencies get faded away and no tooltips for those appear anymore
 - Drill downs enable to get insights of selected component data and their inner dependencies at multiple levels
 - The state of the visualization is stored in URL parameters to enable forwarding an investigation to other people via a hyperlink
+</p>
 			
 #How to use your own CSV dependency files
 You can use this index.html in the src folder for other CSVs as well. Just compute your own dependencies for the CSV or enter them manually. Then just load it by index.html?file=mydata.csv . 
