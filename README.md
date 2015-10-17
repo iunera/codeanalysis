@@ -63,28 +63,28 @@ The headers of the csv have to contain the following lables "creditor,debtor,amo
 - "Risk" is the value of another strength dimension of a dependency that gets used for coloring if available ( In the example the amount is the number of method calls and risk the number of distinct called java types(classes, interfaces, Enums)).</p>
 
 *Drilldown files:*
-<p>When you add a "mydata_drilldown" file it has to be named as the parent file (mydata.csv) with "_drilldown" appended in the filename. E.g.:"jdt.csv->jdt_drilldown.csv".
+<p>When you add a "mydata_drilldown" file it has to be named as the parent file (mydata.csv) with "_drilldown" appended in the filename. E.g.:"jdt.csv->jdt_drilldown.csv".</p><p>
 The labels in a drill-down file (jdt_drilldown.csv) have to be named "topcreditor, topdebtor, creditor, debtor, amount, risk", whereby the topcreditor and topdebtor have to correspond to the "creditor" and "debtor" in the parent file (jdt.csv). The "topcreditor and topdebtor" are needed for the relation to the parent compontents.</p><p>
 Creditor and debtor and in the drilldown file represent the children objects of the parents. You can add another depth dimension with a "drilldown_drilldown.csv" file naming (e.g. jdt.drilldown_drilldown.csv) then the topcreditor and topdebtor correspond to the debtor and creditor of the superior level "_drilldown" file (jdt_drilldown.csv).</p><p>
 E.g. jdt.csv creditor and debtor get topcreditor and topdebtor in jdt_drilldown.csv. The creditors and debtors in the jdt_drilldown.csv get themselves then the topcreditors and topdebtors in jdt_drilldown_drilldown.csv.</p>
 
 		
 #Background
-<p>A software architecture goal to create reliable and reusable software artifacts is to develop loosely coupled software components. Furthermore, strong source code dependencies inflict source reuse and engineering problems.</p><p>
+<p> A software architecture goal to create reliable and reusable software artifacts is to develop loosely coupled software components. Furthermore, strong source code dependencies inflict source reuse and engineering problems.</p><p>
 However, even that it is well-known that restricting dependencies is a good thing, software engineers often cannot avoid them when manufacturing systems in the first place. Commonly, a software system is developed by iterative steps and the dependencies grow in the continuous development process. This results in the process that the dependencies have to be maintained over time and refactoring steps have to be taken to manage and reduce dependencies over time. Once the development of code foundation of a software system grows, the management of dependencies gets more and more complex.</p><p>
 In order to reduce dependencies, developers need to know which artifacts consume other artifacts. Today, mostly this work is done by inspecting the source code manually. Usually the developers tediously gather the artifacts that belong to the desired dependencies and then try to reduce them. </p><p>Additionally, software and their dependencies are multi-dimensional construct and manifold what makes the inspection even more difficult.
 When we saw complex chord diagrams about the financial crisis <a href="http://bl.ocks.org/mbostock/1308257">(check it here)</a> we got motivated us to use chord diagrams to investigate software dependencies in a visual manner.</p>
 
 #Similar Projects
-If you want to have a similar project that you know have enlisted here. Please drop us an email with the project and describe the relation/key similarities or differences.  <a
-				href="mailto:chordcodeanalytics@iunera.com?subject=Feedback%20for%20Code%20Dependency%20Analysis%20with%20Chord%20Diagrams&amp;body=Hi%0D%0Atell%20us%20about%20%20your%20impression%20and/or%20rate%20the%20chord%20analysis%20solution%20in%20respect%20to%20analyze%20a%20large%20program%0D%0A(scale:1-6/1=bad/6=good).">chordcodeanalytics(at)iunera.com</a>
+<p>If you want to have a similar project that you know have enlisted here. Please drop us an email with the project and describe the relation/key similarities or differences.  <a
+				href="mailto:chordcodeanalytics@iunera.com?subject=Feedback%20for%20Code%20Dependency%20Analysis%20with%20Chord%20Diagrams&amp;body=Hi%0D%0Atell%20us%20about%20%20your%20impression%20and/or%20rate%20the%20chord%20analysis%20solution%20in%20respect%20to%20analyze%20a%20large%20program%0D%0A(scale:1-6/1=bad/6=good).">chordcodeanalytics(at)iunera.com</a></p>
 
 
 *DependencyWheel*
-<p>A Similar project that we found is <a href="http://www.redotheweb.com/DependencyWheel/">DependencyWheel: An Interactive Visualization Of Package Dependencies by François Zaninotto</a>. It is a really great tool to visualize PHP dependencies. Main differences that we recognized are: Connection intensity does not get visualized in the connection strength; No permanent marking of components to activate the cyclic depdenecies step by step; No drilldowns; No tooltips</p>
+<p>A Similar project that we found is <a href="http://www.redotheweb.com/DependencyWheel/">DependencyWheel: An Interactive Visualization Of Package Dependencies by François Zaninotto</a>. It is a really great tool to visualize PHP dependencies. Main differences that we recognized are: Connection intensity does not get visualized in the connection strength; No permanent marking of components to activate the cyclic dependencies step by step; No drilldowns; No tooltips</p>
 
 *A Visual Analysis Approach to Support Perfective Software Maintenance*
-<p>Another project that we got told about is <a href="http://www.youtube.com/watch?v=4rkgfRaCS20">A Visual Analysis Approach to Support Perfective Software Maintenance by Jonas Trümper and Martin Beck and Jürgen Döllner in Proceedings of the 16th International Conference on Information Visualisation, IEEE</a>. Main differences that we recognized :  Not running in the browser/ no url params Differences and related visualizations that we found so far; Connection intensity does not get visualized in the connection strength; Step by step dependency investigations by clicking components and fading is not possible in the way we do it; Drill downs or filtering the current selection seems not possible  </p>
+<p>Another similar project is: <a href="http://www.youtube.com/watch?v=4rkgfRaCS20">A Visual Analysis Approach to Support Perfective Software Maintenance by Jonas Trümper and Martin Beck and Jürgen Döllner in Proceedings of the 16th International Conference on Information Visualisation, IEEE</a>. The main differences that we recognized are:  Not running in the browser/ no url params Differences and related visualizations that we found so far; Connection intensity does not get visualized in the connection strength; Step by step dependency investigations by clicking components and fading is not possible in the way we do it; Drill downs or filtering the current selection seems not possible  </p>
 
 
 *Hypermodelling* 
