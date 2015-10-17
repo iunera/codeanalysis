@@ -45,7 +45,7 @@ alt="Source Code Dependency Analysis" width="240" height="180" border="10" /></a
 			
 <h1>Features</h1>
 <p>The current solution visualizes dependencies source code with a chord diagram. Thereby, the diagram uses different features to enable a smooth navigation though the dependencies. In special, the main features are:</p>
-*Permanent marking*
+**Permanent marking**
 <p>The user can select software components and the highlighting (just click the border) is done in a permanent way and not faded away once the hover pointer gets moved away. A special feature of the permanent highlighting is that the connected components that are not activated permanently but that are connected to a highlighted component get faded partially. This way, the user can distinguish selected and connected elements, because the selected ones get shown not faded at all and the just connected ones get shown partially.</p>
 *Dependency intensity visualisation*
 <p>The dependency intensity gets visualized in a graphical manner by showing different thick connections</p>
@@ -67,13 +67,13 @@ In case you want to enlist your file in our chord, just email it to <a
  
 **Description of the csv data - example in ./src/jdt.csv**
 <p>
-The headers of the csv have to contain the following lables "creditor,debtor,amount,risk". <p><p>
+The headers of the csv have to contain the following labels "creditor,debtor,amount,risk". <p>
 - "Creditor" is the outgoing dependency root (caller). 
 - "Debtor" is where the dependency is heading to (callee). 
 - "Amount" is the intensity of the dependency (how often is it called).
 - "Risk" is the value of another strength dimension of a dependency that gets used for coloring if available ( In the example the amount is the number of method calls and risk the number of distinct called java types(classes, interfaces, Enums)).</p>
 
-*Drilldown files: *
+**Drilldown files: **
 <p>When you add a "mydata_drilldown" file it has to be named as the parent file (mydata.csv) with "_drilldown" appended in the filename. E.g.:"jdt.csv->jdt_drilldown.csv".</p><p>
 The labels in a drill-down file (jdt_drilldown.csv) have to be named "topcreditor, topdebtor, creditor, debtor, amount, risk", whereby the topcreditor and topdebtor have to correspond to the "creditor" and "debtor" in the parent file (jdt.csv). The "topcreditor and topdebtor" are needed for the relation to the parent compontents.</p><p>
 Creditor and debtor and in the drilldown file represent the children objects of the parents. You can add another depth dimension with a "drilldown_drilldown.csv" file naming (e.g. jdt.drilldown_drilldown.csv) then the topcreditor and topdebtor correspond to the debtor and creditor of the superior level "_drilldown" file (jdt_drilldown.csv).</p><p>
