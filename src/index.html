@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<meta property="og:image"
+	content="http://www.iunera.de/codedependencywithchord/codedependencywithchord.png" />
+<meta property="og:title"
+	content="Source Code Analysis with Chord Diagrams" />
+<meta property="og:type" content="article" />
+<meta property="fb:admins" content="502773324,796453359" />
+<meta property="og:site_name"
+	content="Source Code Analysis with Chord Diagrams" />
+<meta property="og:description"
+	content="Explore software dependencies with chord diagrams in the browser. Detect visually cycles and discover how you can split monolithic source code into independent modules. Try it by investigating the Eclipse JDT project or fork the project on Github to analyze your own software." />
+
+
+<title>Source Code Analysis with Chord Diagrams</title>
+
+
+<script src="d3.v3.js" charset="utf-8"></script>
+<script src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="jquery.flexibleArea.js"></script>
+
+<!-- share buttons -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="jquery.floating-social-share.min.css">
+<link rel="stylesheet" href="style.css">
+
+<script type="text/javascript" src="jquery.floating-social-share.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="navbar">
+
+		<h1 id="demo-bar-badge" style="text-align: left; margin-left: 100px">
+			Source Code Dependency Analysis with Chord Diagrams</h1>
+
+
+	</div>
+
+	<div class="footer">
+		<p style="margin-left: 150px; float: left; margin-top: 50px;">
+			Realized by the help of:</p>
+		<a href="http://derkeiler.com"
+			style="margin-left: 20px; float: left; margin-top: 45px;"> <img
+			src="derkeiler.jpg" alt="DerKeiler Security Newsgroups" height="50px"></a>
+		<a href="http://hypermodelling.com/index.php/research/publications"
+			style="margin-left: 25px; float: left; margin-top: 45px;"><img
+			src="hypermodelling.jpg" alt="Hypermodelling Technology"
+			height="50px"></a> <a href="http://maps.stappz.com"
+			style="margin-left: 25px; float: left; margin-top: 45px;"><img
+			src="stappzlogo.png" alt="STAPPZ App" height="50px"></a>
+
+		<p style="margin-right: 20px; float: right; margin-top: 65px">
+
+			<a href="http://www.stappz.com/terms/">Terms of Use</a> <a
+				href="http://www.stappz.com/privacy/">Privacy Statement</a>
+
+		</p>
+
+	</div>
+
+	<!-- find source for the fork me on github stuff at https://github.com/simonwhitaker/github-fork-ribbon-css  -->
+		<link rel="stylesheet" href="gh-fork-ribbon.min.css" />
+		<!--[if lt IE 9]>
+    <link rel="stylesheet" href="gh-fork-ribbon.ie.min.css" />
+<![endif]-->
+		<div class="github-fork-ribbon-wrapper left-bottom">
+			<div class="github-fork-ribbon">
+				<a href="https://github.com/iunera/codeanalysis">Fork me on
+					GitHub</a>
+			</div>
+		</div>
+<!-- End for me on github -->
+
+
+	
+	<div class="content">
+
+
+		<p>
+			We collect feedback for further research and need your help:<br>Please
+			share the website and please email some feedback to <a
+				href="mailto:chordcodeanalytics@iunera.com?subject=Feedback%20for%20Code%20Dependency%20Analysis%20with%20Chord%20Diagrams&amp;body=Hi%0D%0Atell%20us%20about%20%20your%20impression%20and/or%20rate%20the%20chord%20analysis%20solution%20in%20respect%20to%20analyze%20a%20large%20program%0D%0A(scale:1-6/1=bad/6=good).">chordcodeanalytics(at)iunera.com</a>
+		</p>
+
+
+		<hr style="clear: both;" />
+
+		<iframe width="560" height="315"
+			src="https://www.youtube.com/embed/RjKhw7qALhg" frameborder="0"
+			allowfullscreen></iframe>
+
+
+		<hr style="clear: both;" />
+
+		<p class="lead">
+			<b>Hide a certain connection type</b>
+		</p>
+
+		<form>
+			<input type="radio" name="category" value="outgoing" /> Outgoing <input
+				type="radio" name="category" value="incoming" /> Incoming <input
+				type="radio" name="category" value="outgoing and incoming" checked />
+			Outgoing and Incoming Connections
+		</form>
+		<p class="lead">
+			<b>Show reverse diagram (Scroll down after activation)</b>
+		</p>
+		<input type="checkbox" id="showincomingconnections"> <label
+			for="showincomingconnections"></label>
+
+		<p class="lead" id="Filterscaption">
+			<b>Filtered Elements:</b>
+		</p>
+
+		<p id="Filters"></p>
+
+
+		<p class="lead" id="Excludescaption">
+			<b>Currently Excluded Elements:</b>
+		</p>
+
+		<p id="Excludes"></p>
+
+		<label id="currentselectionlabel" for="currentselection"><b>Current
+				selection:</b></label>
+
+		<p></p>
+
+		<div id="currentselection">
+			<textarea id="currentselectiontext" readonly
+				style="width: 400px; height: 75px;">
+</textarea>
+			<!--END  USER COntrols -->
+			<p></p>
+
+			<p></p>
+			<input type="button" id="Filter" value="Filter for selection">
+			<input type="button" id="DrillDown" value="Drill down into selection">
+
+			<p></p>
+			<input type="button" id="Exclude" value="Exclude selection">
+			<input type="button" id="Permanentoff"
+				value="Reset current selection (Doubleclick the border)">
+
+			<p></p>
+		</div>
+		<input type="button" value="Go Back" onclick="window.history.back();" />
+
+		<p></p>
+
+		<div id="d3content" class="d3customs">
+			<script type="text/javascript" src="codechord.js"></script>
+
+			<script>
+            $("body").floatingSocialShare({
+                buttons: ["facebook", "twitter", "google-plus", "linkedin", "pinterest", "reddit", "tumblr", "vk"],
+                title: "Code dependency analytics with chord diagrams",
+                description: "Code dependency analytics with chord diagrams",
+                text: "share with: ",
+                url: "http://bit.ly/1hEpbVn"
+            });
+
+        </script>
+
+		</div>
+</body>
+
+</html>

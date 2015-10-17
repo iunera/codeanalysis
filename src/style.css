@@ -1,0 +1,97 @@
+.group text {
+    font: 11px sans-serif;
+    pointer-events: none;
+}
+
+.group path {
+    stroke: #000;
+}
+
+path.chord {
+    stroke-width: .75;
+    fill-opacity: .75;
+}
+
+.navbar {
+    margin-left: 0px;
+    position: fixed;
+    top: 0px;
+    text-align: center;
+    width: 100%;
+    /*height: 100px;*/
+    background: #454545;
+    line-height: 45px;
+    color: #ccc;
+    border-bottom: 1px solid #FFF;
+}
+
+.content {
+    min-height: 100%;
+    margin-top: 100px;
+    margin-left: 100px;
+    height: auto;
+    background: #FFFFFF;
+    text-align: center;
+    color: #000000;
+    margin-bottom: -45px; /* for footer */
+}
+
+.helpframe {
+    position: fixed;
+    min-height: 100%;
+    height: auto;
+    background-color: black;
+    opacity: 1;
+    margin-top: 200px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: -45px;
+    text-align: center; /* for footer */
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /*line-height: 1.5em;*/
+    text-align: left;
+    background: #454545;
+    line-height: 45px;
+    color: #ccc;
+    vertical-align: middle
+}
+
+.footer a:link {
+    color: whitesmoke;
+}
+
+.footer a:visited {
+    color: whitesmoke;
+}
+
+.footer a:hover {
+    color: orange;
+}
+
+.footer a:active {
+    color: whitesmoke;
+}
+
+.footer p {
+    display: block;
+
+}
+
+div {
+    height: 200;
+    overflow: hidden;
+}
+
+body {
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-left: 0px;
+    float: left;
+}
+
+
+
