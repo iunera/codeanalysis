@@ -10,7 +10,7 @@ This project is a proof of concept to demonstrate the advantages of a visual cho
 **Contents**
 - Motivation
 - Approach
-- Demo (Video <a href="https://youtu.be/RjKhw7qALhg">https://youtu.be/RjKhw7qALhg</a> )
+- Demo (<a href="https://youtu.be/RjKhw7qALhg">Video</a>; <a href="http://iunera.com/codedependencywithchord/index.html">Live Demo</a>)
 - Feature Description
 - How to use your own projects / Other CSV file loading
 - Acknowledgement 
