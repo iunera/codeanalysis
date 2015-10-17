@@ -10,7 +10,7 @@ This project is a proof of concept to demonstrate the advantages of a visual cho
 **Contents**
 - Motivation
 - Approach
-- Demo (<a href="https://youtu.be/RjKhw7qALhg">Video</a>; <a href="http://iunera.com/codedependencywithchord/index.html">Live Demo</a>)
+- Demo (<a href="https://youtu.be/RjKhw7qALhg">Video</a>; <a href="http://www.iunera.com/codedependencywithchord/index.html">Live Demo</a>)
 - Feature Description
 - How to use your own projects / Other CSV file loading
 - Acknowledgement 
@@ -22,7 +22,7 @@ This project is a proof of concept to demonstrate the advantages of a visual cho
 			src="src/sizeofcode-hypermodelling-com-frey-dissertation.jpg" alt="Source: T. Frey, Hypermodelling: Next Level Software Engineering with Data Warehouses, Dissertation, Otto-von-Guericke-Universität Magdeburg" ></a>
 			<p>
 Computer programs run on plenty of devices. Their source code is growing into several million lines of code. Investigating dependencies in computer programs is, and gets more and more, complex. This project for dependency analysis with chord diagrams is a complete Javascript solution to leverage the power of chord diagrams to analyze the dependencies of programs in a top down approach. This way, investigations of the dependencies of program components can be done in a visual and intuitive way.</p>
-<p>The data origin for the <a href="http://iunera.com/codedependencywithchord/index.html"
+<p>The data origin for the <a href="http://www.iunera.com/codedependencywithchord/index.html"
 		>demo diagram</a> were created by computing coupling indicators of the <a href="http://http://www.eclipse.org/jdt/">Eclipse Java development tools (JDT)</a> with the <a href="http://hypermodelling.com">Hypermodelling</a> technology. Thereby, the coupling indicators are loaded from CSV data files into the diagram (see the csv files in the source folder as example to generate your own). The CSV approach enables to use other CSV data with the Javascript frontend.
 </p>
 
@@ -32,7 +32,7 @@ Computer programs run on plenty of devices. Their source code is growing into se
 
 <h1>Demo</h1>
 <p>Live demo:
-<a href="http://iunera.com/codedependencywithchord/index.html">http://iunera.com/codedependencywithchord/index.html</a>
+<a href="http://www.iunera.com/codedependencywithchord/index.html">http://www.iunera.com/codedependencywithchord/index.html</a>
 </p>
 <p>
 Find a demo usage video here:
