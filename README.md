@@ -25,12 +25,10 @@ Computer programs run on plenty of devices. Their source code is growing into se
 		>demo diagram</a> were created by computing coupling indicators of the <a href="http://http://www.eclipse.org/jdt/">Eclipse Java development tools (JDT)</a> with the <a href="http://hypermodelling.com">Hypermodelling</a> technology. Thereby, the coupling indicators are loaded from CSV data files into the diagram (see the csv files in the source folder as example to generate your own). The CSV approach enables to use other CSV data with the Javascript frontend.
 </p>
 
-***sdsd**
-
 <h1>Approach</h1>	
 <p>We compute the amount of method class of one Java package to another. We do this for the package hierarchy of a Java program. This means we compute it for org.eclipse, org.eclipse.jdt, org.eclipse.jdt.core and so on and so forth. We arrange the amount which package calls which package in several a comma separated value (csv) files. Then we use these csv files to feed a Javascript chord diagram with the data. The chord diagrams gets some additional controls to let the user navigate and explore the dependencies based on method calls then. 
 </p>
-***sdsd**
+
 <h1>Demo</h1>
 <p>Live demo:
 <a href="http://iunera.com/codedependencywithchord/index.html">http://iunera.com/codedependencywithchord/index.html</a>
@@ -46,35 +44,35 @@ alt="Source Code Dependency Analysis" width="240" height="180" border="10" /></a
 <h1>Features</h1>
 
 <p>The current solution visualizes dependencies source code with a chord diagram. Thereby, the diagram uses different features to enable a smooth navigation though the dependencies. In special, the main features are:</p>
-**Permanent marking**
+<b>Permanent marking</b>
 <p>The user can select software components and the highlighting (just click the border) is done in a permanent way and not faded away once the hover pointer gets moved away. A special feature of the permanent highlighting is that the connected components that are not activated permanently but that are connected to a highlighted component get faded partially. This way, the user can distinguish selected and connected elements, because the selected ones get shown not faded at all and the just connected ones get shown partially.</p>
-*Dependency intensity visualisation*
+<b>Dependency intensity visualisation</b>
 <p>The dependency intensity gets visualized in a graphical manner by showing different thick connections</p>
-*Faded association highlighting*  
+Faded association highlighting
 <p>Selected system components lead to a highlighting of the associated dependencies and the components they lead to</p>
-*Hover tooltips*
+<b>Hover tooltips</b>
 <p>Tooltips get shown once a dependency gets selected, showing details about the intensity</p>
-*Drill-Downs*
+<b>Drill-Downs</b>
 <p>Drill downs enable to get insights of selected component data and their inner dependencies at multiple levels</p>
-*Url parameter diagram state*
+<b>Url parameter diagram state</b>
 <p>The state of the visualization is stored in URL parameters to enable forwarding an investigation result to other people via a hyperlinks.</p>
 		
 <h1>How to use your own CSV dependency files</h1>
-You can use this index.html in the src folder for other CSVs as well. Just compute your own dependencies for the CSV or enter them manually. Then just load it by index.html?file=mydata.csv . 
-In case you want to enlist your file in our chord, just email it to <a
-				href="mailto:chordcodeanalytics@iunera.com?subject=Feedback%20for%20Code%20Dependency%20Analysis%20with%20Chord%20Diagrams&amp;body=Hi%0D%0Atell%20us%20about%20%20your%20impression%20and/or%20rate%20the%20chord%20analysis%20solution%20in%20respect%20to%20analyze%20a%20large%20program%0D%0A(scale:1-6/1=bad/6=good).">chordcodeanalytics(at)iunera.com</a> or send a push request with the CSV data. We'll then enlist it in the script that user can choose different projects.
+<p>You can use this index.html in the src folder for other CSVs as well. Just compute your own dependencies for the CSV or enter them manually. Then just load it by index.html?file=mydata.csv . 
+</p><p>In case you want to enlist your project then in our chord, just email the url and so on to <a
+				href="mailto:chordcodeanalytics@iunera.com?subject=Feedback%20for%20Code%20Dependency%20Analysis%20with%20Chord%20Diagrams&amp;body=Hi%0D%0Atell%20us%20about%20%20your%20impression%20and/or%20rate%20the%20chord%20analysis%20solution%20in%20respect%20to%20analyze%20a%20large%20program%0D%0A(scale:1-6/1=bad/6=good).">chordcodeanalytics(at)iunera.com</a> or send a push request with the CSV data if you want to include data. </p>
 
-*Remark:* If you copy start the script locally with a browser without a webserver (e.g. file:/// and not http://) it is likely the case that you have to turn off the same origin policy of the browser. The other way to get around the same origin pilicy is to let it run on a webserver and upload the csv there. 
+<b>Remark:</b> If you copy start the script locally with a browser without a webserver (e.g. file:/// and not http://) it is likely the case that you have to turn off the same origin policy of the browser. The other way to get around the same origin pilicy is to let it run on a webserver and upload the csv there. 
  
-**Description of the csv data - example in ./src/jdt.csv**
+<b>Description of the csv data - example in ./src/jdt.csv</b>
 <p>
 The headers of the csv have to contain the following labels "creditor,debtor,amount,risk". <p>
-- "Creditor" is the outgoing dependency root (caller). 
-- "Debtor" is where the dependency is heading to (callee). 
-- "Amount" is the intensity of the dependency (how often is it called).
-- "Risk" is the value of another strength dimension of a dependency that gets used for coloring if available ( In the example the amount is the number of method calls and risk the number of distinct called java types(classes, interfaces, Enums)).</p>
+"Creditor" is the outgoing dependency root (caller). <br>
+"Debtor" is where the dependency is heading to (callee). <br>
+"Amount" is the intensity of the dependency (how often is it called).<br>
+"Risk" is the value of another strength dimension of a dependency that gets used for coloring if available ( In the example the amount is the number of method calls and risk the number of distinct called java types(classes, interfaces, Enums)).</p>
 
-**Drilldown files: **
+<b>Drilldown files: </b>
 <p>When you add a "mydata_drilldown" file it has to be named as the parent file (mydata.csv) with "_drilldown" appended in the filename. E.g.:"jdt.csv->jdt_drilldown.csv".</p><p>
 The labels in a drill-down file (jdt_drilldown.csv) have to be named "topcreditor, topdebtor, creditor, debtor, amount, risk", whereby the topcreditor and topdebtor have to correspond to the "creditor" and "debtor" in the parent file (jdt.csv). The "topcreditor and topdebtor" are needed for the relation to the parent compontents.</p><p>
 Creditor and debtor and in the drilldown file represent the children objects of the parents. You can add another depth dimension with a "drilldown_drilldown.csv" file naming (e.g. jdt.drilldown_drilldown.csv) then the topcreditor and topdebtor correspond to the debtor and creditor of the superior level "_drilldown" file (jdt_drilldown.csv).</p><p>
